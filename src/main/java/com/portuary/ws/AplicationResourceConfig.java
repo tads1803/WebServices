@@ -18,7 +18,9 @@ public class AplicationResourceConfig extends ResourceConfig {
     public AplicationResourceConfig() {
         super(
             MultiPartFeature.class,
-            AplicationResource.class
+            AplicationResource.class,
+            ContainerResource.class,
+            MovimentacaoResource.class
         );
     }
 
