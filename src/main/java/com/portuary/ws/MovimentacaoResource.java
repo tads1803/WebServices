@@ -34,10 +34,10 @@ public class MovimentacaoResource {
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    public Response GetRelatorioByMovimentacao() {
+    public Response GetRelatorioByMovimentacao(String dados) {
         try {
             // Solicita o relatório
-            JSONObject resp = (new Movimentacao_BO()).GetRelatorioByMovimento();
+            JSONObject resp = (new Movimentacao_BO()).GetRelatorioByMovimento(dados);
             // Retorna os dados ao frontEnd
             return Response.status(Response.Status.OK).entity(resp.toString()).build();
         } catch (Exception e) {

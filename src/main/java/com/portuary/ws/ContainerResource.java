@@ -33,10 +33,10 @@ public class ContainerResource {
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    public Response GetRelatorioByCategoria() {
+    public Response GetRelatorioByCategoria(String dados) {
         try {
             // Solicita o relatório
-            JSONObject resp = (new Container_BO()).GetRelatorioByCategoria();
+            JSONObject resp = (new Container_BO()).GetRelatorioByCategoria(dados);
             // Retorna os dados ao frontEnd
             return Response.status(Response.Status.OK).entity(resp.toString()).build();
         } catch (Exception e) {
